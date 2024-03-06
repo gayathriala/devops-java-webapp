@@ -1,34 +1,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loksai-eta-deploy
+  name: gayathriala-deploy
   labels:
-    app: loksai-eta-app
+    app: gayathriala-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: loksai-eta-app
+      app: gayathriala-app
   template:
     metadata:
       labels:
-        app: loksai-eta-app
+        app: gayathriala-app
     spec:
       containers:
-      - name: loksai-eta-container
-        image: loksaieta/loksai-eta-app
+      - name: gayathriala-container
+        image: gayathriala/gayathriala-app
         ports:
         - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: loksai-eta-np-service
+  name: gayathriala-np-service
   labels:
-    app: loksai-eta-app
+    app: gayathriala-app
 spec:
   selector:
-    app: loksai-eta-app
+    app: gayathriala-app
 
   type: NodePort
   ports:
